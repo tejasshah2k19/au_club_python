@@ -1,0 +1,28 @@
+Admin 
+	*add admin 
+	add p 
+	remove p	
+	update p
+	list p
+
+
+Customer 
+	list 
+	buy
+	view my orders 
+	
+list
+1	laptop	25000
+2	iphone	35000
+3	mic	2500
+
+buy
+enter productId 
+2
+enter qty 
+2
+Order placed 
+
+view my orders [ latest order must be first ] 
+orderid   date 		product  price     	qty	total 
+1	     1-5-2021	iphone	  35000    	2	70000
