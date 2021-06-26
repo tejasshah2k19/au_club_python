@@ -1,0 +1,5 @@
+this is the easiest way to write
+data in file
+this line located at 3
+i am at 4
+i am last line.

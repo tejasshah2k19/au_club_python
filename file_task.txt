@@ -1,0 +1,17 @@
+1) take 10 numbers from the user store into numbers.txt
+    read numbers.txt , check number is odd then store into odd.txt
+                       check number is even then store into even.txt
+
+     finally print all files
+
+2) take two file name from user
+    if any of the file is not present print appropriate message
+    if both files are present swap data of both file
+
+
+3) take directory name from user and print all the files of that director also
+    count hw many java and python files are stored in that given directory
+
+
+
+
