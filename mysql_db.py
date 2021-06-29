@@ -48,15 +48,67 @@ def insertRecord():
 
     cur.execute("commit")
 
+def deleteRecord():
+    fname = input("Enter name")
+    cur.execute("delete from users where fname like %s",(fname,))
+    if cur.rowcount == 0:
+        print("Name not found")
+    else:
+        print(cur.rowcount," record(s) deleted")
 
+    cur.execute("commit")
+
+def getDataByEmail(email):
+    cur.execute("select * from users where email like %s",(email,))
+    if cur.rowcount == 0:
+        return None
+    else:
+        user = cur.fetchone()
+        return user
+
+def updateUser(oldUser):
+
+    firstName = olduser[1]
+    password = olduser[3]
+    email = olduser[2]
+
+    print("your first name : ",firstName)
+    choice = input("do you want to update name? Yy|Nn")
+    if choice == "y" or choice == "Y":
+        firstName = input("enter new first name")
+
+
+    print("your password : ", password)
+    choice = input("do you want to update password? Yy|Nn")
+    if choice == "y" or choice == "Y":
+        password = input("enter password")
+
+    cur.execute("update users set fname = %s , password = %s where email = %s",(firstName,password,email))
 while True:
-    print("0 for exit\n1 for insert\n2 for list\nenter choice")
+    print("0 for exit\n1 for insert\n2 for list\n3 for delete\n4 for update\nenter choice")
     choice = int(input())
 
     if choice == 1:
         insertRecord()
     elif choice == 2:
         listAll()
+    elif choice == 3:
+        deleteRecord()
+    elif choice == 4:
+        print("enter email ")
+        email = input()
+
+        olduser = getDataByEmail(email)
+        if olduser == None:
+            print("Invalid user")
+        else:
+            updateUser(olduser)
+
+        # for u in olduser:
+        #     updateUser(u)
+
+
+
     elif choice == 0:
         break
     else:
