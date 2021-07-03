@@ -58,7 +58,7 @@ def deleteRecord():
 
     cur.execute("commit")
 
-                             
+
 def getDataByEmail(email):
     cur.execute("select * from users where email like %s",(email,))
     if cur.rowcount == 0:
